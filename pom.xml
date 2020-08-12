@@ -9,11 +9,11 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>sara</artifactId>
-	<version>0.0.8-SNAPSHOT</version>
+	<artifactId>health-tracker</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>saraproject</name>
-	<description>Demo project for Spring Boot</description>
+	<name>saraworld</name>
+	<description>sara world health tracker</description>
 
 	<properties>
 		<java.version>1.8</java.version>
@@ -51,7 +51,6 @@
 		<dependency>
 			<groupId>org.apache.tomcat.embed</groupId>
 			<artifactId>tomcat-embed-jasper</artifactId>
-			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

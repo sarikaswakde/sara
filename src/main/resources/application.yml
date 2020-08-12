@@ -1,6 +1,6 @@
 server:
   port: 9090
-  contextPath: /SaraApplication
+  contextPath: /HealthTracker
 spring:
   mvc:
     view:

@@ -1,10 +1,106 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Welcome to Sara World :)</title>
+<title>Sara World</title>
 </head>
 <body>
 
-	<h2>Sara World is always ready for your help!!!!</h2>
+	<marquee><h1>Sara World : Health Tracker</h1></marquee>
+
+    <h3>How are you feeling today?</h3>
+    <input type="radio" name="feeling" value="Fresh">Fresh 
+    <input type="radio" name="feeling" value="Weak">Weak 
+      
+    <br> 
+    
+    <h3>Do you have cough and cold?</h3>
+    <input type="radio" name="cold" value="Yes">Yes
+    <input type="radio" name="cold" value="No">No 
+      
+    <br> 
+    
+    <h3>Do you have fever?</h3>
+    <input type="radio" name="fever" value="Yes">Yes
+    <input type="radio" name="fever" value="No">No 
+      
+    <br> 
+    
+    <h3>Do you feel any breathing difficulties?</h3>
+    <input type="radio" name="breath" value="Yes">Yes
+    <input type="radio" name="breath" value="No">No 
+      
+    <br> 
+    
+    <h3>Do you feel any medical history?</h3>
+    <input type="radio" name="history" value="Yes">Yes
+    <input type="radio" name="history" value="No">No 
+      
+    <br><br>
+    
+    <button type="button" onclick="deriveResult()"> 
+        Submit 
+    </button> 
+      
+    <br> 
+      
+    <h2 id="result" style="color:blue"></h2>
+      
+    <script> 
+        function deriveResult() { 
+            var feel = document.getElementsByName('feeling'); 
+            var cold = document.getElementsByName('cold'); 
+            var fever = document.getElementsByName('fever'); 
+            var breath = document.getElementsByName('breath'); 
+            var history = document.getElementsByName('history'); 
+            
+            var feelres = ""
+            var coldres = ""
+            var feverres = ""
+            var breathres = ""
+            var historyres = ""
+            
+            for(i = 0; i < feel.length; i++) { 
+                if(feel[i].checked) 
+                feelres = feel[i].value; 
+            } 
+            
+            for(i = 0; i < cold.length; i++) { 
+                if(cold[i].checked) 
+                coldres = cold[i].value; 
+            } 
+            
+            for(i = 0; i < fever.length; i++) { 
+                if(fever[i].checked) 
+                feverres = fever[i].value; 
+            } 
+            
+            for(i = 0; i < breath.length; i++) { 
+                if(breath[i].checked) 
+                breathres = breath[i].value; 
+            } 
+            
+            for(i = 0; i < history.length; i++) { 
+                if(history[i].checked) 
+                historyres = history[i].value; 
+            } 
+            
+           
+            if(feelres == "Weak" && 
+            	coldres == "Yes" && 
+            	feverres == "Yes" && 
+            	breathres == "Yes" && 
+            	historyres == "Yes")
+                document.getElementById("result").innerHTML = "See a doctor immediately and get tested for COVID-19! Take Care.. ";
+            else if(feelres == "Fresh" && 
+            		coldres == "No" && 
+            		feverres == "No" && 
+            		breathres == "No" && 
+            		historyres == "No")
+            	document.getElementById("result").innerHTML = "Yey!!! You are fit and fine, continue being fit ";
+            else
+            	document.getElementById("result").innerHTML = "See a doctor, monitor your health and take good care of yourself!";            
+        } 
+    </script>
+	
 </body>
 </html>
